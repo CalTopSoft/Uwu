@@ -1,0 +1,58 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotización de Casas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Cotizador de Casas</h1>
+
+  <!-- Primera sección -->
+  <section>
+    <h2>Selecciona una casa</h2>
+    <select id="selectCasa"></select>
+    <div>
+      <label>Baños: <input type="text" id="banos" readonly></label>
+      <label>Dormitorios: <input type="text" id="dormitorios" readonly></label>
+      <label>Precio: <input type="text" id="precio" readonly></label>
+      <label>Metros Cuadrados: <input type="text" id="metros" readonly></label>
+    </div>
+  </section>
+
+  <!-- Segunda sección -->
+  <section>
+    <h2>Financiamiento</h2>
+    <label>Plan (años):
+      <select id="plan">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </label>
+    <label>Tasa anual (%): <input type="number" id="tasa"></label>
+    <label>Entrada: <input type="number" id="entrada"></label>
+    <label>Meses: <input type="number" id="meses"></label>
+    <div>
+      <label>Cuota de entrada: <input type="text" id="cuotaEntrada" readonly></label>
+      <label>Saldo: <input type="text" id="saldo" readonly></label>
+      <label>Cuota mensual: <input type="text" id="cuotaMensual" readonly></label>
+    </div>
+    <button onclick="calcularCuotas()">Generar Cuotas</button>
+    <button onclick="generarAmortizacion()">Generar Tabla de Amortización</button>
+
+    <table id="tablaAmortizacion">
+      <thead>
+        <tr><th>Mes</th><th>Cuota</th><th>Interés</th><th>Abono a capital</th><th>Saldo</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
